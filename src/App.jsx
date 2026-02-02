@@ -3,6 +3,9 @@
 // import viteLogo from '/vite.svg'
 // import './App.css'
 
+import AddTask from "./components/AddTask";
+import Tasks from "./components/Tasks";
+
 // function App() {
 //   const [count, setCount] = useState(0)
 
@@ -34,32 +37,14 @@
 
 // export default App
 
-import { useState } from "react";
+// import { useState } from "react";
 
 function App() {
-  // State (EStado)
-  // let message = "Teste"; Não precisa mais por conta do uso do useState
-
-  const [message, setMessage] = useState("Uma mensagem"); // Entre parentese fica o valor inicial do estado
-
   return (
     <dvi>
-      <h1>Olá, {message}</h1>
-      <button
-        onClick={function () {
-          // message = "Outra mensagem sem arrow funcion"; Não funciona desa forma, use o useState conforme abaixo
-          setMessage("Outra mensagem sem arrow funcion");
-        }}
-      >
-        Mudar mensagem
-      </button>
-      <button
-        onClick={() => {
-          setMessage("Outra mensagem com arrow funcion");
-        }}
-      >
-        Mudar mensagem 2 com arrow funcion
-      </button>
+      <h1>Gerenciador de Tarefa</h1>
+      <AddTask />
+      <Tasks />
     </dvi>
   );
 }
