@@ -6,6 +6,7 @@
 import { useEffect, useState } from "react";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
+import Test from "./components/Test";
 import { v4 } from "uuid";
 
 // function App() {
@@ -105,6 +106,7 @@ function App() {
         <h1 className="text-3xl text-slate-100 font-bold text-center">
           Gerenciador de Tarefa
         </h1>
+        {/* <Test /> */}
         <AddTask onAddTaskSubmit={onAddTaskSubmit} />
         <Tasks
           tasks={tasks}
