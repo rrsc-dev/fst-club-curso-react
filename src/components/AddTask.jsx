@@ -25,7 +25,11 @@ function AddTask({ onAddTaskSubmit }) {
         onChange={(event) => setDescripion(event.target.value)}
       />
       <button
-        onClick={() => onAddTaskSubmit(title, description)}
+        onClick={() => {
+          onAddTaskSubmit(title, description);
+          setTitle("");
+          setDescripion("");
+        }}
         className="bg-slate-500 text-white px-4 py-2 rounded-md font-medium"
       >
         Adicionar
