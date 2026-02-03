@@ -3,7 +3,7 @@
 // import viteLogo from '/vite.svg'
 // import './App.css'
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 import { v4 } from "uuid";
@@ -42,26 +42,13 @@ import { v4 } from "uuid";
 // import { useState } from "react";
 
 function App() {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: "Estudar React",
-      description: "Loren ipsum dolor sit amet, consectetur adipiscing elit.",
-      completed: false,
-    },
-    {
-      id: 2,
-      title: "Estudar React 2",
-      description: "Loren ipsum dolor sit amet, consectetur adipiscing elit.",
-      completed: false,
-    },
-    {
-      id: 3,
-      title: "Estudar React 3",
-      description: "Loren ipsum dolor sit amet, consectetur adipiscing elit.",
-      completed: true,
-    },
-  ]);
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem("tasks")) || [],
+  );
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   function onTaskClick(taskId) {
     const newTasks = tasks.map((task) => {
