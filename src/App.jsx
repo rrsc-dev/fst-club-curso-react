@@ -74,7 +74,7 @@ function App() {
     setTasks(newTasks);
   }
 
-  function deleteTask(taskId) {
+  function onDeleteTaskClick(taskId) {
     const newTasks = tasks.filter((task) => task.id !== taskId);
 
     setTasks(newTasks);
@@ -90,7 +90,7 @@ function App() {
         <Tasks
           tasks={tasks}
           onTaskClick={onTaskClick}
-          onDeleteTask={deleteTask}
+          onDeleteTaskClick={onDeleteTaskClick}
         />
       </div>
     </div>
