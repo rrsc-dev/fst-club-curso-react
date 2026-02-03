@@ -67,7 +67,7 @@ function App() {
       setTasks(data);
     }
 
-    fetchTasks();
+    // fetchTasks();
   }, []); // SErá executado apenas uma vez quando inicia a aplicação
 
   function onTaskClick(taskId) {
